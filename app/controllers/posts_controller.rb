@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     def show
         #목록창index창에서 각 post의 제목을 누르면 내용을 보여주는 화면으로 마지막에 post를 submit버튼을 누르면 이 화면이 나오도록 설정하였다
         @post = Post.find(params[:post_id]) #이 페이지에서 post라는 변수를 사용하는데 이 변수에는 post객체 중에서 post id를 키값으로 전달하여 그 키값에 해당되는 객체를 찾아서 post변수에 넣어준다 
-        @comments = Comment.all
+        @comments = Comment.where(post_id: params[:post_id] ) # :를 붙여서 써야 오류가 안나넹 뭐 이런게 다있어
     end 
     
     #Update

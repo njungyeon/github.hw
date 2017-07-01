@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   
   post '/posts/show/:post_id/comments/create' => 'comments#create'
   
-  #post '/' => 'comments#destroy'
+  #Destroy
+  post '/posts/show/:post_id/comments/destroy/:comment_id' => 'comments#destroy'
 end
